@@ -4,6 +4,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+const connectToDb = require('./db/db');   // requiring the function which connects to database
+connectToDb();  // calling the function which connects with database
+
 app.use(cors());
 
 app.get('/',(req,res)=>{ 
