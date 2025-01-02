@@ -1,16 +1,22 @@
 const dotenv = require('dotenv');
-dotenv.config()
-const express = require('express');
+dotenv.config();
 const cors = require('cors');
-const app = express();
 
-const connectToDb = require('./db/db');   // requiring the function which connects to database
-connectToDb();  // calling the function which connects with database
+const express = require('express');
+const app = express();
+const connectToDb = require('./db/db');
+const userRoutes = require('./routes/user.routes');
+connectToDb();
 
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/',(req,res)=>{ 
-    res.send('Hello World');
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
 
-module.exports=app;
+
+app.use('/users', userRoutes);
+
+module.exports = app;
