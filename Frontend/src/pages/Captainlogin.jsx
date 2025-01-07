@@ -6,11 +6,11 @@ const Captainlogin = () => {
 
   const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
-    const [userData, setuserData] = useState({})
+    const [captainData, setcaptainData] = useState('')
   
     const submitHandler = (e) => {
       e.preventDefault();
-      setuserData({
+      setcaptainData({
         email: email,
         password: password
       })
