@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {useGSAP} from '@gsap/react'
+import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { useRef } from 'react'
 import 'remixicon/fonts/remixicon.css'
@@ -17,30 +17,30 @@ function Home() {
     e.preventDefault();
   }
 
-  useGSAP(function(){
-    if(panelOpen){
+  useGSAP(function () {
+    if (panelOpen) {
       gsap.to(panelRef.current, {
-        height:'70%',
-        padding:'24px',
-        opacity:1
+        height: '70%',
+        padding: '24px',
+        opacity: 1
       })
       gsap.to(panelCloseRef.current, {
-        opacity:1
+        opacity: 1
       })
-    }else{
+    } else {
       gsap.to(panelRef.current, {
-        height:'0%',
+        height: '0%',
         // opacity:0
       })
       gsap.to(panelCloseRef.current, {
-        opacity:0
+        opacity: 0
       })
     }
 
-  },[panelOpen])
+  }, [panelOpen])
 
   return (
-    <div className='h-screen relative'>
+    <div className='h-screen relative overflow-hidden'>
       <img className='w-16 absolute left-5 top-5' src="./src/assets/logo4copy.png" alt="Orbitz logo" />
 
       <div className='h-screen w-screen'>
@@ -49,10 +49,10 @@ function Home() {
 
       <div className=' flex flex-col justify-end h-screen absolute top-0 w-full'>
         <div className='h-[30%]  p-6 bg-white relative '>
-          <h5 ref={panelCloseRef} onClick={()=>{
+          <h5 ref={panelCloseRef} onClick={() => {
             setPanelOpen(false)
           }} className='absolute opacity-0 right-6 top-6 text-2xl'>
-          <i className="ri-arrow-down-wide-line"></i>
+            <i className="ri-arrow-down-wide-line"></i>
           </h5>
           <h4 className='text-2xl font-semibold'>Find a trip </h4>
           <form onSubmit={(e) => {
@@ -87,8 +87,42 @@ function Home() {
         </div>
 
         <div ref={panelRef} className='bg-white h-0'>
-              <LocationSearchPanel />
+          <LocationSearchPanel />
         </div>
+      </div>
+
+      <div className='fixed w-full z-10 bottom-0 translate-y-full bg-white  px-3 py-'>
+
+        <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
+          <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1712027307/assets/42/eb85c3-e2dc-4e95-a70d-22ee4f08015f/original/Screenshot-2024-04-01-at-9.08.07p.m..png" alt="" />
+          <div className='ml-2 w-1/2'>
+            <h4 className='font-medium text-base'>OrbitzRide <span><i className="ri-user-3-fill"></i>4</span></h4>
+            <h5 className='font-medium text-sm'>2 mins away</h5>
+            <p className='font-normal text-xs text-gray-600'>Comfy car rides</p>
+          </div>
+              <h2 className='text-lg font-semibold'>₹193.66</h2>
+        </div>
+
+        <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
+          <img className='h-12' src="./src/assets/bike.jpeg" alt="" />
+          <div className='ml-2 w-1/2'>
+            <h4 className='font-medium text-base'>OrbitzZoom<span><i className="ri-user-3-fill"></i>1</span></h4>
+            <h5 className='font-medium text-sm'>1 mins away</h5>
+            <p className='font-normal text-xs text-gray-600'>Fast and nimble bike ride</p>
+          </div>
+              <h2 className='text-lg font-semibold'>₹93.36</h2>
+        </div>
+
+        <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
+          <img className='h-12' src="./src/assets/auto.png" alt="" />
+          <div className='ml-2 w-1/2'>
+            <h4 className='font-medium text-base'>OrbitzTuk <span><i className="ri-user-3-fill"></i>3</span></h4>
+            <h5 className='font-medium text-sm'>3 mins away</h5>
+            <p className='font-normal text-xs text-gray-600'>Fun ride with tuk-tuk</p>
+          </div>
+              <h2 className='text-lg font-semibold'>₹133.98</h2>
+        </div>
+
       </div>
 
     </div>
