@@ -5,13 +5,16 @@ import { gsap } from 'gsap'
 import { useRef } from 'react'
 import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from '../components/LocationSearchPanel'
+import { use } from 'react'
 
 function Home() {
   const [pickup, setPickup] = useState('')
   const [destination, setDestination] = useState('')
   const [panelOpen, setPanelOpen] = useState(false)
+  const vechiclePanelRef = useRef(null)
   const panelRef = useRef(null)
   const panelCloseRef = useRef(null)
+  const [vehiclePanel, setVehiclePanel] = useState(false)
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -38,6 +41,23 @@ function Home() {
     }
 
   }, [panelOpen])
+
+
+  useGSAP(function () {
+
+    if (vehiclePanel) {
+      gsap.to(vechiclePanelRef.current, {
+        transform: 'translateY(0)'
+      })
+    } else {
+      gsap.to(vechiclePanelRef.current, {
+        transform: 'translateY(100%)'
+      })
+    }
+
+
+  }, [vehiclePanel])
+
 
   return (
     <div className='h-screen relative overflow-hidden'>
@@ -87,11 +107,13 @@ function Home() {
         </div>
 
         <div ref={panelRef} className='bg-white h-0'>
-          <LocationSearchPanel />
+          <LocationSearchPanel setPanelOpen={setPanelOpen} setVehiclePanel={setVehiclePanel} />
         </div>
       </div>
 
-      <div className='fixed w-full z-10 bottom-0 translate-y-full bg-white  px-3 py-'>
+      <div ref={vechiclePanelRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white  px-3 py-8'>
+
+              <h5 className='p-3 text-center absolute top-0 bg-red-500'><i className="ri-arrow-down-wide-line"></i></h5>
 
         <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
           <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1712027307/assets/42/eb85c3-e2dc-4e95-a70d-22ee4f08015f/original/Screenshot-2024-04-01-at-9.08.07p.m..png" alt="" />
@@ -100,7 +122,7 @@ function Home() {
             <h5 className='font-medium text-sm'>2 mins away</h5>
             <p className='font-normal text-xs text-gray-600'>Comfy car rides</p>
           </div>
-              <h2 className='text-lg font-semibold'>₹193.66</h2>
+          <h2 className='text-lg font-semibold'>₹193.66</h2>
         </div>
 
         <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
@@ -110,7 +132,7 @@ function Home() {
             <h5 className='font-medium text-sm'>1 mins away</h5>
             <p className='font-normal text-xs text-gray-600'>Fast and nimble bike ride</p>
           </div>
-              <h2 className='text-lg font-semibold'>₹93.36</h2>
+          <h2 className='text-lg font-semibold'>₹93.36</h2>
         </div>
 
         <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
@@ -120,7 +142,7 @@ function Home() {
             <h5 className='font-medium text-sm'>3 mins away</h5>
             <p className='font-normal text-xs text-gray-600'>Fun ride with tuk-tuk</p>
           </div>
-              <h2 className='text-lg font-semibold'>₹133.98</h2>
+          <h2 className='text-lg font-semibold'>₹133.98</h2>
         </div>
 
       </div>
