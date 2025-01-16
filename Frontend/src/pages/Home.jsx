@@ -111,10 +111,12 @@ function Home() {
         </div>
       </div>
 
-      <div ref={vechiclePanelRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white  px-3 py-8'>
+      <div ref={vechiclePanelRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white  px-3 py-10 pt-14'>
 
-              <h5 className='p-3 text-center absolute top-0 bg-red-500'><i className="ri-arrow-down-wide-line"></i></h5>
-
+              <h5 className='p-1 text-center absolute w-[94%] top-0' onClick={()=>{
+                setVehiclePanel(false)
+              }}><i className=" text-3xl text-gray-200 ri-arrow-down-wide-line"></i></h5>
+              <h3 className='text-2xl font-semibold mb-5'>Choose a Vehicle </h3>
         <div className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
           <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1712027307/assets/42/eb85c3-e2dc-4e95-a70d-22ee4f08015f/original/Screenshot-2024-04-01-at-9.08.07p.m..png" alt="" />
           <div className='ml-2 w-1/2'>
