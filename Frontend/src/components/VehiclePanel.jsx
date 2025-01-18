@@ -10,7 +10,7 @@ const VehiclePanel = (props) => {
               <h3 className='text-2xl font-semibold mb-5'>Choose a Vehicle </h3>
 
         <div onClick={()=>{
-            props.setconfirmRidePanel(true)
+            props.setConfirmRidePanel(true)
         }} className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
           <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1712027307/assets/42/eb85c3-e2dc-4e95-a70d-22ee4f08015f/original/Screenshot-2024-04-01-at-9.08.07p.m..png" alt="" />
           <div className='ml-2 w-1/2'>
@@ -22,7 +22,7 @@ const VehiclePanel = (props) => {
         </div>
 
         <div onClick={()=>{
-            props.setconfirmRidePanel(true)
+            props.setConfirmRidePanel(true)
         }} className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
           <img className='h-12' src="./src/assets/bike.jpeg" alt="" />
           <div className='ml-2 w-1/2'>
@@ -34,7 +34,7 @@ const VehiclePanel = (props) => {
         </div>
 
         <div onClick={()=>{
-            props.setconfirmRidePanel(true)
+            props.setConfirmRidePanel(true)
         }} className='flex w-full p-3 border-2 active:border-black mb-2 rounded-xl items-center justify-between'>
           <img className='h-12' src="./src/assets/auto.png" alt="" />
           <div className='ml-2 w-1/2'>
