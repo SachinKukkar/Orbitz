@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Riding = () => {
     return (
         <div className='h-screen'>
+            <Link to='/home' className='fixed  right-2 top-2 h-10 w-10 bg-white flex items-center justify-center rounded-full'>
+            <i className="text-lg font-medium ri-home-5-line "></i>
+            </Link>
             <div className='h-1/2'>
                 <img
                     className="h-full w-full object-cover"
@@ -11,7 +15,7 @@ const Riding = () => {
                 />
             </div>
 
-            <div className='h-1/2'>
+            <div className='h-1/2 p-4'>
 
                 <div className='flex items-center justify-between'>
                     <img className='h-16' src="./src/assets/BlackCar.png" alt="" />
@@ -27,13 +31,7 @@ const Riding = () => {
 
                     <div className='w-full mt-5'>
 
-                        <div className='flex items-center gap-4 p-3 border-b-2'>
-                            <i className="ri-map-pin-range-fill"></i>
-                            <div>
-                                <h3 className='text-lg font-medium'>562/11-A</h3>
-                                <p className='text-sm -mt-1 text-gray-600'>Kankariya Talab, Ahemdabad</p>
-                            </div>
-                        </div>
+                        
 
                         <div className='flex items-center gap-4 p-3 border-b-2'>
                             <i className="ri-map-pin-2-fill"></i>
@@ -53,7 +51,7 @@ const Riding = () => {
                     </div>
                 </div>
 
-                <button>Pay your Driver</button>
+                <button className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Pay your Driver</button>
             </div>
 
         </div>

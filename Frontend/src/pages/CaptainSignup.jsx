@@ -168,7 +168,7 @@ const Captainsignup = () => {
         <p className='text-center'>Already have an account? <Link to='/captain-login' className='text-blue-600'>Login here</Link></p>
       </div>
       <div>
-        <p className='text-[12px] leading-tight'>By proceeding, you consent to get calls, WhatsApp or SMS messages, including by automated means, from Orbitz and its affiliates to the details provided.</p>
+        <p className='text-[12px] mt-6 leading-tight'>By proceeding, you consent to get calls, WhatsApp or SMS messages, including by automated means, from Orbitz and its affiliates to the details provided.</p>
       </div>
     </div>
   )
