@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react'
 
 import CaptainDetails from '../components/CaptainDetails'
 import RidePopUp from '../components/RidePopUp'
-import ConfirmRidePopup from '../components/ConfirmRidePopup/ConfirmRidePopup'
+import ConfirmRidePopup from '../components/ConfirmRidePopup'
 
 
 const CaptainHome = () => {
