@@ -10,7 +10,6 @@ router.get('/get-coordinates',
     mapController.getCoordinates
 );
 
-
 router.get('/get-distance-time',
     query('origin').isString().isLength({ min: 3 }),
     query('destination').isString().isLength({ min: 3 }),
@@ -24,5 +23,6 @@ router.get('/get-suggestions',
     mapController.getAutoCompleteSuggestions
 )
 
-module.exports = router;
 
+
+module.exports = router;
